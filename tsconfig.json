@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		// The standard typing to be included in the type checking process.
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"outDir": "./dist/",
+		"noImplicitAny": true,
+		"module": "es2022",
+		"target": "es5",
+		// Whether to support JSX in .tsx files.
+		"jsx": "react-jsx",
+		// Whether to allow JavaScript files to be compiled.
+		"allowJs": true,
+		// Whether to skip type checking of all the type declaration files
+		"skipLibCheck": true,
+		// This allows default imports from modules with no default export in the type checking process.
+		"allowSyntheticDefaultImports": true,
+		// This sets the level of type checking to very high. When this is true, the project is said to be running in strict mode.
+		"strict": true,
+		// Ensures that the casing of referenced file names is consistent during the type checking process.
+		"forceConsistentCasingInFileNames": true,
+		// How module dependencies get resolved
+		"moduleResolution": "Node",
+		// Whether to suppress TypeScript generating code during the compilation process.
+		"noEmit": true,
+		"sourceMap": true,
+		"baseUrl": "./",
+		"paths": {
+			"/*": ["./src*"],
+			"@": ["src/*"],
+			"@ui": ["src/shared/ui-kit"],
+			"@vars": ["src/shared/styles/vars.scss"],
+			"@pages/*": ["src/pages/*"],
+			"@features/*": ["src/features/*"],
+			"@entities/*": ["src/entities/*"],
+			"@shared/*": ["src/shared/*"],
+			"@assets/*": ["src/shared/assets"],
+			"@store": ["src/app/store/index.ts"],
+			// "/public/images": ["./public/images/"],
+    },
+	}
+}
