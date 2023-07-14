@@ -7,7 +7,10 @@
 
 /* NORMALIZATION */
 @import "./normal.scss";
+
 @import '@vars';
+@import '@shared/styles/index.scss';
+
 /* DOCUMENT */
 
 body {

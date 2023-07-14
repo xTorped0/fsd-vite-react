@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 //
 import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
+import environment from 'vite-plugin-environment'
 //
 import path from 'path';
 
@@ -14,6 +15,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '@ui': path.resolve(__dirname, './src/shared/ui-kit'),
       '@store': path.resolve(__dirname, './src/app/store/index.ts'),
+      '@api': path.resolve(__dirname, './src/app/api'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@features': path.resolve(__dirname, './src/features'),
       '@entities': path.resolve(__dirname, './src/entities'),
@@ -26,6 +28,7 @@ export default defineConfig({
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
-    react()
+    react(),
+    environment('all', { prefix: 'REACT_APP_' }),
   ],
 })

@@ -1,0 +1,10 @@
+@import '@vars';
+
+.error {
+	color: $text-dangerous;
+	
+	font-style: italic;
+	text-align: center;
+
+	margin: 1em 0;
+}

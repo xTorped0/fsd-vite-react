@@ -1,13 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { apiSlice } from '@api/apiSlice';
+import { authSlice } from '@features/auth';
+import { listenerMiddleware } from '@shared/middlewares/listenerMiddleware';
+
 const store = configureStore({
 	reducer: {
+		[apiSlice.reducerPath]: apiSlice.reducer,
 		auth: authSlice,
 	},
 	devTools: true,
-	middleware: getDefaultMiddleware => getDefaultMiddleware({
-		serializableCheck: false
-	}),
+	middleware: getDefaultMiddleware => 
+		getDefaultMiddleware({
+			serializableCheck: false
+		}).concat(
+			apiSlice.middleware,
+			listenerMiddleware.middleware
+		),
 	// preloadedState: {
 	// 	auth: authPreloaded
 	// }
