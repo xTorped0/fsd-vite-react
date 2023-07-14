@@ -11,7 +11,7 @@
     "rtk-query"
   ],
   "scripts": {
-    "dev": "vite --port 8600",
+    "dev": "vite --port 8000",
     "build": "vite build",
     "preview": "vite preview"
   },

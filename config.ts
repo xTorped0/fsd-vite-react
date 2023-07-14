@@ -16,7 +16,7 @@ const config = {
 		//
 		mqtt: {
 			host: api_hostname,
-			port: 19003, //  19002 is a qa and 19003 is a dev
+			port: process.env.REACT_APP_MQTT_PORT, //  19002 is a qa and 19003 is a dev
 			useSSL: false, // defaults to `false`
 			consoleLog: false, // defaults to `false`
 			log: false // defaults to `false`

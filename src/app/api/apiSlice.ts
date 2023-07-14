@@ -8,7 +8,7 @@ const config = window.config;
 
 const baseQuery = fetchBaseQuery({
 	baseUrl: config.network.api_url,
-	credentials: 'include',
+	// credentials: 'include',
 	headers: {
 		'Accept': 'application/json', 
 		'Content-Type': 'application/json' 
