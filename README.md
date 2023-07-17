@@ -41,12 +41,14 @@ So structure is look like this
 - To add new requests u should use apiSlice `import { apiSlice } from "@api/apiSlice"` and insert new methods using `injectEndpoints` **Additional info how to use RTK Query u can find at official site. Link is presented below**
 - To create store use any available options for creating storage from `RTK` but I recommended to use slices. You can add created slice in `src/app/store/index.ts`
 - To subscribe on / unsubscribe from mqtt topic u can use:
-
+  
+```ts no-transpile
   import { MQTT };
   type TListener = (payload: string, tail: string) => void;
   //
   MQTT.subscribe(topic: string, listener: TListener);
   MQTT.unsubscribe(topic: string, listener: TListener);
+```
 
 ### Styles
 
