@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice, isAnyOf } from "@reduxjs/toolkit";
-import type { authData, Auth } from "./types";
+
+import { MQTTStart, MQTTStop, notifySubs, NotyType } from "@shared/api";
 import { startAppListening } from "@shared/middlewares/listenerMiddleware";
-import { RootState } from "@app/store";
+
+import type { RootState } from "@app/store";
+import type { authData, Auth } from "./types";
 
 const defState = {
 	user: null,
@@ -32,19 +35,24 @@ const { setCredentials, logout } = authSlice.actions;
 const logIn = createAsyncThunk<void, authData, { state: RootState }>(
 	'auth/login', 
 	(data, { dispatch }) => {
+		const { host, port } = window.config.network.mqtt;
 		//
 		dispatch(setCredentials(data));
+		//
+		MQTTStart(host, port);
+		notifySubs(NotyType.LOGIN);
 	}
 );
 
 const logOut = createAsyncThunk<void>(
 	'auth/logout', 
 	(_, { dispatch }) => {
+		notifySubs(NotyType.LOGOUT);
+		MQTTStop();
 		//
 		dispatch(logout());
 	}
 );
-
 
 startAppListening({
 	matcher: isAnyOf(setCredentials, logout),
@@ -52,7 +60,7 @@ startAppListening({
 		localStorage.setItem(
 			"auth", JSON.stringify((listenerApi.getState() as RootState).auth)
 		)
-})
+});
 
 export { authSlice, setCredentials, logOut, logIn };
 
