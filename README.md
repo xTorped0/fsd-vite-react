@@ -53,7 +53,7 @@ So structure is look like this
 ### Styles
 
 In our project we use `SASS` preprocessor but `scss` syntax. Module styles are available `styles.module.scss`. If u import styles globally u should use 
-BEM methodology
+`BEM methodology`
 
 
 
