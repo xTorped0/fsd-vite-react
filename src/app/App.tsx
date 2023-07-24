@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Layout from '@shared/components/Layout';
-import { Auth } from '@pages/auth';
 import { RequireAuth } from '@shared/components/RequireAuth';
+
+import { Auth } from '@pages/auth';
 import { Home } from '@pages/home';
 
 export function App() {

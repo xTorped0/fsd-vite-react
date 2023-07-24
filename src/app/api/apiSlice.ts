@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { FetchArgs, BaseQueryApi }  from '@reduxjs/toolkit/query/react';
 
 import { RootState } from '@store';
-import { logOut } from '@features/auth';
+import { logOut } from '@features/auth-form';
 
 const config = window.config;
 

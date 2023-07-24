@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { apiSlice } from '@api/apiSlice';
-import { authSlice } from '@features/auth';
+
+import { authSlice } from '@features/auth-form';
+
 import { listenerMiddleware } from '@shared/middlewares/listenerMiddleware';
 
 const store = configureStore({
