@@ -1,7 +1,7 @@
 # How to deal with current structure
 
 ## Preface and main goal 
-First of all, a wanna to emphasize that current architecture isn't perfect and i'm open to all ideas and suggestions that can improve this arch. The reason why i decided to choose this architecture is simple: there is a minimum of two-way communication between modules and understandable `FSD's` documentation which underlies this architecture. It was also decided to use technologies React, RTK with Query, React Router. Also, I'm highly recommended to use typescript here. Specifacally in our project we use `Antd` but achitecture have to be built in such a way than UI design language could be changed in few hours without any troubles. Links to documentation are presented below (at the end of this file)
+First of all, a wanna emphasize that current architecture isn't perfect and i'm open to all ideas and suggestions that can improve this arch. The reason why i decided to choose this architecture is simple: there is a minimum of two-way communication between modules and understandable `FSD's` documentation which underlies this architecture. It was also decided to use technologies React, RTK with Query, React Router. Also, I'm highly recommended to use typescript here. Specifacally in our project we use `Antd` but achitecture have to be built in such a way than UI design language could be changed in few hours without any troubles. Links to documentation are presented below (at the end of this file)
 
 ## Quick guide
 To setup main api links u should change `.env` file that located in the root of the project, some additional settings u can easely find in `config.ts` file that is next to `.env` file 
